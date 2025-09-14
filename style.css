@@ -20,8 +20,8 @@ body {
 
 /* Sidebar */
 .sidebar {
-  width: 250px;
-  background-color: #1f1f1f;
+  width: 240px;
+  background-color: #454545;
   color: #fff;
   padding: 30px 20px;
   position: sticky;
