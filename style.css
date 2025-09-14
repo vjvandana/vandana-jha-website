@@ -1,53 +1,122 @@
-/* General styles */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.7; /* More spacing between lines */
+/* Reset & base */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica', Arial, sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background-color: #f9f9f9;
+}
+
+/* Wrapper layout */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
 }
 
 /* Sidebar */
 .sidebar {
-  position: fixed;
+  width: 250px;
+  background-color: #1f1f1f;
+  color: #fff;
+  padding: 30px 20px;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 220px;
-  height: 100%;
-  background-color: #f8f8f8;
-  padding-top: 20px;
-  border-right: 1px solid #ddd;
+  height: 100vh;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
 }
 
 .sidebar ul {
   list-style: none;
-  padding: 0;
 }
 
 .sidebar ul li {
-  margin: 15px 0;
+  margin: 20px 0;
 }
 
 .sidebar ul li a {
+  color: #fff;
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .sidebar ul li a:hover {
-  color: #007bff;
+  color: #00bcd4;
+}
+
+.sidebar .contact-info,
+.sidebar .social-links {
+  margin-top: 40px;
+}
+
+.sidebar .social-links a {
+  display: inline-block;
+  margin-right: 15px;
+  color: #00bcd4;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 /* Main content */
-.main-content {
-  margin-left: 240px; /* Leave space for sidebar */
-  padding: 20px;
-}
-
-header, section, footer {
-  margin-bottom: 40px;
-}
-
-.container {
+.content {
+  flex: 1;
+  padding: 50px 60px;
   max-width: 900px;
-  margin: 0 auto;
+}
+
+.content section {
+  margin-bottom: 60px;
+}
+
+.content h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1f1f1f;
+}
+
+.content ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.content ul li {
+  margin-bottom: 10px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  color: #666;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 20px;
+  }
+  .content {
+    padding: 20px;
+  }
 }
